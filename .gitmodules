@@ -1,0 +1,3 @@
+[submodule "pyPdf"]
+	path = pyPdf
+	url = git://github.com/mfenniak/pyPdf.git
