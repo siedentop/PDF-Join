@@ -1,8 +1,9 @@
 from datetime import date
 import os
+from pyPdf import PdfFileWriter, PdfFileReader
 
-MEDIA_ROOT = "/home/chris/devel/toolsite/media/uploads/"
-UPLOAD_PATH = 'uploads/%Y/%m'
+MEDIA_ROOT = "/home/chris/devel/toolsite/media/"
+UPLOAD_PATH = 'uploads/'
 
 def handle_uploads(FILES):
 	''' Function to handle upload of files '''
@@ -22,12 +23,21 @@ def handle_uploads(FILES):
 		for chunk in upload.chunks():
 			dest.write(chunk)
 		dest.close()
-		saved.append((key, os.path.join(upload_dir, upload.name)))
+		saved.append(os.path.join(upload_dir, upload.name))
 	# returns [(key1, path1), (key2, path2), ...]
 	return saved
 	
 def generate_pdf(files):
-	pass
+	output = PdfFileWriter()
+	for f in files:
+		print f, files[f]
+		pdf = PdfFileReader(open(f.__str__(), 'rb'))
+		for page in pdf.pages:
+			output.addPage(page)
+	outfile = open("output.pdf", "wb")
+	output.write(outfile)
+	outfile.close()
+	return outfile
 
 def is_valid_pdf(filepath):
 	'''Validates that file is proper PDF-File'''
