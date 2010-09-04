@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 	(r'^admin/', include(admin.site.urls)),
 
 	(r'^$', direct_to_template,  { 'template': 'index.html' }, 'index'),
+	(r'^legal$', direct_to_template,  { 'template': 'legal.html' }, 'legal'),
 
 	(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 	

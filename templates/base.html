@@ -10,7 +10,6 @@
 <ul class="navbar">
 	<li><a href={% url index %}>Home page </a></li>
 	<li><a href={% url pdfjoin %}>PDF Connector </a></li>
-	<li><a href={% url impressum %}>Impressum</a></li>
 </ul>
 
 <h1> {% block body_header %}{% endblock %} </h1>
@@ -21,7 +20,7 @@
 
 <address>
 {% block address %}
-
+<a href={% url legal %}>Legal </a>
 {% endblock %}
 </address>
 
