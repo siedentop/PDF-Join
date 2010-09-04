@@ -35,7 +35,4 @@ class FileGroupForm(forms.Form):
 		if not self.is_valid():
 			raise ValueError("Form was not filled corretly.")
 		return new_filegroup
-	
 
-	
-#todo atleast one pdffile required...
