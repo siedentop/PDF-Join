@@ -83,5 +83,3 @@ INSTALLED_APPS = (
     'toolsite',
 )
 
-PIWIK_URL= 'http://unapiedra.dyndns.org/piwik/'
-PIWIK_TOKEN='e94154651d70748a1494a8d8b48bb513'

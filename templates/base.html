@@ -1,9 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3c//DTD HTML 4.01//EN">
 <html>
-{% autoescape off %}
-{{ piwik_tag }}
-{% endautoescape %}
-
 <head>
 	<title>{% block title %}Unapiedra's Tools{% endblock %}</title>
 	<link rel="stylesheet" href="/site_media/style.css">
@@ -14,17 +10,18 @@
 <ul class="navbar">
 	<li><a href={% url index %}>Home page </a></li>
 	<li><a href={% url pdfjoin %}>PDF Connector </a></li>
+	<li><a href={% url impressum %}>Impressum</a></li>
 </ul>
 
 <h1> {% block body_header %}{% endblock %} </h1>
 
-{% block body %}
+{% block content %}
 <p>This site is empty. Go somewhere else, please.</p>
 {% endblock %}
 
 <address>
 {% block address %}
-Copyright 2010, Christoph Siedentop
+
 {% endblock %}
 </address>
 
