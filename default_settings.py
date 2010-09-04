@@ -61,7 +61,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'piwik.django.middleware.PiwikMiddleware',
 )
 
 ROOT_URLCONF = 'toolsite.urls'
@@ -79,8 +78,6 @@ INSTALLED_APPS = (
     
     'django.contrib.admin',
     'django.contrib.admindocs',
-    
-    'piwik.django',
     
     'pdfjoin',
     'toolsite',
