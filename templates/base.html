@@ -1,5 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3c//DTD HTML 4.01//EN">
 <html>
+{% autoescape off %}
+{{ piwik_tag }}
+{% endautoescape %}
+
 <head>
 	<title>{% block title %}Unapiedra's Tools{% endblock %}</title>
 	<link rel="stylesheet" href="/site_media/style.css">

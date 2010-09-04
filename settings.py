@@ -1,15 +1,14 @@
 # Django settings for toolsite project.
 from default_settings import *
 
-DEBUG = True
-
-ADMINS = (
-   # ('Your Name', 'your@email.com'),
+ADMINS = (('Christoph Siedentop', 'christophsiedentop@gmail.com'),
 )
+
 MEDIA_ROOT = '/usr/local/django/toolsite/media/'
+ADMIN_MEDIA_ROOT = '/usr/local/django/adminmedia'
 
 MEDIA_URL = ''
 
 TEMPLATE_DIRS = (
-    "/home/chris/devel/toolsite/templates"
+    "/usr/local/django/toolsite/templates"
 )

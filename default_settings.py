@@ -9,7 +9,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'database.sqlite',                      # Or path to database file if using sqlite3.
+        'NAME': '/usr/local/django/toolsite/database.sqlite',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -43,7 +43,7 @@ MEDIA_URL = ''
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/adminmedia/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '-ecmg95d5!%e+v=%e2nrm4crjwvovt-=p!fz6j!684efcukmn*'
@@ -61,6 +61,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'piwik.django.middleware.PiwikMiddleware',
 )
 
 ROOT_URLCONF = 'toolsite.urls'
@@ -79,6 +80,11 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     
+    'piwik.django',
+    
     'pdfjoin',
     'toolsite',
 )
+
+PIWIK_URL= 'http://unapiedra.dyndns.org/piwik/'
+PIWIK_TOKEN='e94154651d70748a1494a8d8b48bb513'
