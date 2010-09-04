@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 from django.core.context_processors import csrf
 
-from pdfjoin.models import *
+from pdfjoin.forms import *
 
 from pyPdf import PdfFileReader, PdfFileWriter
 
@@ -13,7 +13,6 @@ def show_start(request):
 	if request.method == 'POST':
 		form = FileGroupForm(request.POST, request.FILES)
 		if form.is_valid():
-			#filegroup = form.save()
 			
 			import StringIO
 			output = PdfFileWriter()
@@ -24,11 +23,13 @@ def show_start(request):
 				pdf = PdfFileReader(infile)
 				for page in pdf.pages:
 					output.addPage(page)
-		
-			response = HttpResponse(mimetype="application/pdf")
-			filename = "test.pdf"
-			response['Content-Disposition'] = 'attachment; filename=%s' % filename
 			
+			# Set filename
+			filename = request.POST['title']
+			filename = filename.split('.')[0] + '.pdf'
+			
+			response = HttpResponse(mimetype="application/pdf")
+			response['Content-Disposition'] = 'attachment; filename=%s' % filename
 			
 			output.write(response)
 			infile.close()
