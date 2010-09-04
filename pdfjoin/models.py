@@ -26,6 +26,7 @@ class FileGroupForm(forms.Form):
 	author = forms.CharField(label="Author", max_length=100, required=False)
 	datetime = forms.DateTimeField(widget=forms.DateTimeInput(), initial=datetime.datetime.now())
 	file1 = forms.FileField(label="File 1", required=True)
+	file2 = forms.FileField(label="File 2", required=False)
 	
 	def save(self):
 		new_filegroup = FileGroup.objects.create(filename=self.cleaned_data['filename'], 
