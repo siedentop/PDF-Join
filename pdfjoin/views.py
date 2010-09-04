@@ -13,7 +13,7 @@ def show_start(request):
 	if request.method == 'POST':
 		form = FileGroupForm(request.POST, request.FILES)
 		if form.is_valid():
-			filegroup = form.save()
+			#filegroup = form.save()
 			
 			import StringIO
 			output = PdfFileWriter()
