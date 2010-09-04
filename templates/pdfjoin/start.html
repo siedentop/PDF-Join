@@ -8,9 +8,17 @@
 
 <form enctype="multipart/form-data" method="post">
 {% csrf_token %}
+
 <table>
 {{ form.as_table }}
 </table>
+
+{% if errors %}
+{% for error in errors %}
+<div><error>{{ error }}</error></div>
+{% endfor %}
+{% endif %}
+
 
 <input type="submit" value="Generate PDF"/>
 </form>

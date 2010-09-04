@@ -45,3 +45,10 @@ address
 	padding-top: 1em;
 	border-top: thin dotted 
 }
+
+error
+{
+	color: red;
+	background-color: black;
+	font-width: bold;
+}

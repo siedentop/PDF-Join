@@ -1,4 +1,7 @@
 from django import forms
+
+from pdfjoin.utils import is_valid_pdf
+
 import datetime
 	
 class FileGroupForm(forms.Form):
@@ -7,6 +10,3 @@ class FileGroupForm(forms.Form):
 	file1 = forms.FileField(label="File 1", required=True)
 	file2 = forms.FileField(label="File 2", required=False)
 	file3 = forms.FileField(label="File 3", required=False)
-	
-	def save(self):
-		pass
