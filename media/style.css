@@ -28,6 +28,8 @@ ul.navbar a
 { 
 	text-decoration: none; 
 	color: #7F9F00;
+	font-weight: bold;
+	font-family: Helvetica, Geneva, Arial, sans-serif;
 }
 a:link { text-decoration: underline }
 a:visited { text-decoration: none }
