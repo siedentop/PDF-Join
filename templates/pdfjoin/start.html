@@ -4,13 +4,21 @@
 
 {% block content %}
 <p>PDF Connector lets you connect multiple PDF-files into one. </p>
-<p>Upload some PDFs and download one single PDF file.</p>
+<p>Upload some PDFs and download one single PDF file. Only one PDF file is required.</p>
 
 <form enctype="multipart/form-data" method="post">
 {% csrf_token %}
-{{ form.as_p }}
+<table>
+{{ form.as_table }}
+</table>
 
 <input type="submit" value="Generate PDF"/>
 </form>
+
+<p>Please let me know if something doesn't work. 
+
+Note: I am not storing your PDFs. They are only handled in memory. 
+Be aware that your files are sent via an open http connection. Want to donate a SSL-certificate ;-) ?
+</p>
 
 {% endblock %}
