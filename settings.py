@@ -1,11 +1,12 @@
 # Django settings for toolsite project.
 from default_settings import *
 
-ADMINS = (('Christoph Siedentop', 'christophsiedentop@gmail.com'),
-)
+DEBUG = True
 
-MEDIA_ROOT = '/usr/local/django/toolsite/media/'
-ADMIN_MEDIA_ROOT = '/usr/local/django/adminmedia'
+ADMINS = (
+   ('Christoph Siedentop', 'christophsiedentop@gmail.com'),
+)
+MEDIA_ROOT = '/home/chris/devel/toolsite/media'
 
 MEDIA_URL = ''
 
