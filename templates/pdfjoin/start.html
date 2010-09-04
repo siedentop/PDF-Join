@@ -6,4 +6,11 @@
 <p>PDF Connector lets you connect multiple PDF-files into one. </p>
 <p>Upload some PDFs and download one single PDF file.</p>
 
+<form enctype="multipart/form-data" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+<input type="submit" value="Generate PDF"/>
+</form>
+
 {% endblock %}
