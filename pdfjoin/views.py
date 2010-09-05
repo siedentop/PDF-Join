@@ -46,3 +46,8 @@ def show_start(request):
 	else:
 		form = FileGroupForm()
 	return render_to_response('pdfjoin/start.html', {'form': form }, context_instance=RequestContext(request))
+
+
+def csrf_failure(request, reason=""):
+	return render_to_response('403.html')
+	

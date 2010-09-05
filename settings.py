@@ -13,3 +13,7 @@ MEDIA_URL = ''
 TEMPLATE_DIRS = (
     "/usr/local/django/toolsite/templates"
 )
+
+CSRF_FAILURE_VIEW = (
+	'pdfjoin.views.csrf_failure'
+)
