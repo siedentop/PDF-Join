@@ -18,18 +18,20 @@ def show_start(request):
 			errors = []
 			import StringIO
 			output = PdfFileWriter()
-			for name in request.FILES:
-				upload = request.FILES[name]
-				infile = StringIO.StringIO()
-				infile.write(upload.read())
-				try:
-					pdf = PdfFileReader(infile)
-				except PdfReadError: 
-					errors.append("Error with your file '%s.' " % upload.name)
+			for name in ['file1', 'file2', 'file3']:
+				try: 
+					upload = request.FILES[name]
+					infile = StringIO.StringIO()
+					infile.write(upload.read())
+					try:
+						pdf = PdfFileReader(infile)
+					except PdfReadError: 
+						errors.append("Error with your file '%s.' " % upload.name)
+						continue
+					for page in pdf.pages:
+						output.addPage(page)
+				except:
 					continue
-				for page in pdf.pages:
-					output.addPage(page)
-					
 			if len(errors) != 0:
 				return render_to_response('pdfjoin/start.html', {'form': form,  'errors':errors}, context_instance=RequestContext(request))
 
